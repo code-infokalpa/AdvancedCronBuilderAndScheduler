@@ -1,0 +1,2223 @@
+<apex:page docType="html-5.0" showHeader="false" standardStylesheets="false" applyHtmlTag="false">
+    <head>        
+        <meta charset="utf-8"/>
+   		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Easy to use Cron Expression Builder" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <!--<apex:includeScript value="{!URLFOR($Resource.advance_cron, '/bundle.js')}"/> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsforce/1.11.0/jsforce.min.js" integrity="sha512-8hVBUCZTjM+P4Fiz4CdowIAgPD0WLYjb4yxwBqasFLPevDmoIaNVbMOiqhV/eJEImnqY2jC/ehmdP1OhZOHaTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <title>Advanced Cron Builder and Scheduler</title>
+    </head>
+    <body data-sidebar="light" data-keep-enlarged="true" data-layout-size="boxed" data-topbar="dark" data-layout-scrollable="true" data-new-gr-c-s-check-loaded="14.1063.0" data-gr-ext-installed=""><div id="uniccmp" data-nosnippet=""></div>
+
+<!-- Left Sidebar End -->
+
+	<!-- ============================================================== -->
+	<!-- Start right Content here -->
+	<!-- ============================================================== -->
+	<div class="main-content" style="height: auto !important;">
+        <h1 class="text-center display-4">Advanced Cron Builder And Scheduler</h1>
+		<div class="page-content" style="height: auto !important;">
+			<div class="container-fluid" style="height: auto !important;">
+
+				<!-- start page title -->
+
+				<!-- end page title -->
+
+
+
+
+
+
+
+				<div class="row" style="height: auto !important;">
+					<div class="col-lg-12">
+						<div class="card mb-2">
+							<div id="crontabs" class="card-body">
+								<ul id="crongenerator" class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active" data-bs-toggle="tab" href="#tabs-1" role="tab">
+											<span class="d-block d-sm-none">Seconds</span>
+											<span class="d-none d-sm-block">Seconds</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-bs-toggle="tab" href="#tabs-2" role="tab">
+											<span class="d-block d-sm-none">Minutes</span>
+											<span class="d-none d-sm-block">Minutes</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-bs-toggle="tab" href="#tabs-3" role="tab">
+											<span class="d-block d-sm-none">Hours</span>
+											<span class="d-none d-sm-block">Hours</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-bs-toggle="tab" href="#tabs-4" role="tab">
+											<span class="d-block d-sm-none">Day</span>
+											<span class="d-none d-sm-block">Day</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-bs-toggle="tab" href="#tabs-5" role="tab">
+											<span class="d-block d-sm-none">Month</span>
+											<span class="d-none d-sm-block">Month</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-bs-toggle="tab" href="#tabs-6" role="tab">
+											<span class="d-block d-sm-none">Year</span>
+											<span class="d-none d-sm-block">Year</span>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content p-3 text-muted">
+									
+									<div class="tab-pane active" id="tabs-1" role="tabpanel">
+										<div>
+											<div>
+                                                <input type="radio" id="cronSecondSpecific" checked="checked" name="cronSecond" />
+												<label for="cronSecondSpecific">Specific second (choose one)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond0" value="0" checked="true" />
+															<label class="form-check-label" for="cronSecond0">00</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond1" value="1"/>
+															<label class="form-check-label" for="cronSecond1">01</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond2" value="2"/>
+															<label class="form-check-label" for="cronSecond2">02</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond3" value="3"/>
+															<label class="form-check-label" for="cronSecond3">03</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond4" value="4"/>
+															<label class="form-check-label" for="cronSecond4">04</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond5" value="5"/>
+															<label class="form-check-label" for="cronSecond5">05</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond6" value="6"/>
+															<label class="form-check-label" for="cronSecond6">06</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond7" value="7"/>
+															<label class="form-check-label" for="cronSecond7">07</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond8" value="8"/>
+															<label class="form-check-label" for="cronSecond8">08</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond9" value="9"/>
+															<label class="form-check-label" for="cronSecond9">09</label>
+														</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond10" value="10"/>
+															<label class="form-check-label" for="cronSecond10">10</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond11" value="11"/>
+															<label class="form-check-label" for="cronSecond11">11</label>
+														</span>
+														<span class="col-6p">$
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond12" value="12"/>
+															<label class="form-check-label" for="cronSecond12">12</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond13" value="13"/>
+															<label class="form-check-label" for="cronSecond13">13</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond14" value="14"/>
+															<label class="form-check-label" for="cronSecond14">14</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond15" value="15"/>
+															<label class="form-check-label" for="cronSecond15">15</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond16" value="16"/>
+															<label class="form-check-label" for="cronSecond16">16</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond17" value="17"/>
+															<label class="form-check-label" for="cronSecond17">17</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond18" value="18"/>
+															<label class="form-check-label" for="cronSecond18">18</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond19" value="19"/>
+															<label class="form-check-label" for="cronSecond19">19</label>
+														</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond20" value="20"/>
+															<label class="form-check-label" for="cronSecond20">20</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond21" value="21"/>
+															<label class="form-check-label" for="cronSecond21">21</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond22" value="22"/>
+															<label class="form-check-label" for="cronSecond22">22</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond23" value="23"/>
+															<label class="form-check-label" for="cronSecond23">23</label>
+														</span>Specific
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond24" value="24"/>
+															<label class="form-check-label" for="cronSecond24">24</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond25" value="25"/>
+															<label class="form-check-label" for="cronSecond25">25</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond26" value="26"/>
+															<label class="form-check-label" for="cronSecond26">26</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond27" value="27"/>
+															<label class="form-check-label" for="cronSecond27">27</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond28" value="28"/>
+															<label class="form-check-label" for="cronSecond28">28</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond29" value="29"/>
+															<label class="form-check-label" for="cronSecond29">29</label>
+														</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond30" value="30"/>
+															<label class="form-check-label" for="cronSecond30">30</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond31" value="31"/>
+															<label class="form-check-label" for="cronSecond31">31</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond32" value="32"/>
+															<label class="form-check-label" for="cronSecond32">32</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond33" value="33"/>
+															<label class="form-check-label" for="cronSecond33">33</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond34" value="34"/>
+															<label class="form-check-label" for="cronSecond34">34</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond35" value="35"/>
+															<label class="form-check-label" for="cronSecond35">35</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond36" value="36"/>
+															<label class="form-check-label" for="cronSecond36">36</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond37" value="37"/>
+															<label class="form-check-label" for="cronSecond37">37</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond38" value="38"/>
+															<label class="form-check-label" for="cronSecond38">38</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond39" value="39"/>
+															<label class="form-check-label" for="cronSecond39">39</label>
+														</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond40" value="40"/>
+															<label class="form-check-label" for="cronSecond40">40</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond41" value="41"/>
+															<label class="form-check-label" for="cronSecond41">41</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond42" value="42"/>
+															<label class="form-check-label" for="cronSecond42">42</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond43" value="43"/>
+															<label class="form-check-label" for="cronSecond43">43</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond44" value="44"/>
+															<label class="form-check-label" for="cronSecond44">44</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond45" value="45"/>
+															<label class="form-check-label" for="cronSecond45">45</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond46" value="46"/>
+															<label class="form-check-label" for="cronSecond46">46</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond47" value="47"/>
+															<label class="form-check-label" for="cronSecond47">47</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond48" value="48"/>
+															<label class="form-check-label" for="cronSecond48">48</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond49" value="49"/>
+															<label class="form-check-label" for="cronSecond49">49</label>
+														</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond50" value="50"/>
+															<label class="form-check-label" for="cronSecond50">50</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond51" value="51"/>
+															<label class="form-check-label" for="cronSecond51">51</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond52" value="52"/>
+															<label class="form-check-label" for="cronSecond52">52</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond53" value="53"/>
+															<label class="form-check-label" for="cronSecond53">53</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond54" value="54"/>
+															<label class="form-check-label" for="cronSecond54">54</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond55" value="55"/>
+															<label class="form-check-label" for="cronSecond55">55</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond56" value="56"/>
+															<label class="form-check-label" for="cronSecond56">56</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond57" value="57"/>
+															<label class="form-check-label" for="cronSecond57">57</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond58" value="58"/>
+															<label class="form-check-label" for="cronSecond58">58</label>
+														</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond59" value="59"/>
+															<label class="form-check-label" for="cronSecond59">59</label>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="tabs-2" role="tabpanel">
+										<div>
+											
+											<div>
+                                                <input type="radio" id="cronMinuteSpecific" checked="checked" name="cronMinute"/>
+												<label for="cronMinuteSpecific">Specific minute (choose one or many)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute0" value="0" />
+                                                        	<label class="form-check-label" for="cronMinute0">00</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute1" value="1"/>
+                                                        	<label class="form-check-label" for="cronMinute1">01</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute2" value="2"/>
+                                                        	<label class="form-check-label" for="cronMinute2">02</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute3" value="3"/>
+                                                        	<label class="form-check-label" for="cronMinute3">03</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute4" value="4"/>
+                                                        	<label class="form-check-label" for="cronMinute4">04</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute5" value="5"/>
+                                                        	<label class="form-check-label" for="cronMinute5">05</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute6" value="6"/>
+                                                        	<label class="form-check-label" for="cronMinute6">06</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute7" value="7"/>
+                                                        	<label class="form-check-label" for="cronMinute7">07</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute8" value="8"/>
+                                                        	<label class="form-check-label" for="cronMinute8">08</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute9" value="9"/>
+                                                        	<label class="form-check-label" for="cronMinute9">09</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute10" value="10"/>
+                                                        	<label class="form-check-label" for="cronMinute10">10</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute11" value="11"/>
+                                                        	<label class="form-check-label" for="cronMinute11">11</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute12" value="12"/>
+                                                        	<label class="form-check-label" for="cronMinute12">12</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute13" value="13"/>
+                                                        	<label class="form-check-label" for="cronMinute13">13</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute14" value="14"/>
+                                                        	<label class="form-check-label" for="cronMinute14">14</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute15" value="15"/>
+                                                        	<label class="form-check-label" for="cronMinute15">15</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute16" value="16"/>
+                                                        	<label class="form-check-label" for="cronMinute16">16</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute17" value="17"/>
+                                                        	<label class="form-check-label" for="cronMinute17">17</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute18" value="18"/>
+                                                        	<label class="form-check-label" for="cronMinute18">18</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute19" value="19"/>
+                                                        	<label class="form-check-label" for="cronMinute19">19</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute20" value="20"/>
+                                                        	<label class="form-check-label" for="cronMinute20">20</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute21" value="21"/>
+                                                        	<label class="form-check-label" for="cronMinute21">21</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute22" value="22"/>
+                                                        	<label class="form-check-label" for="cronMinute22">22</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute23" value="23"/>
+                                                        	<label class="form-check-label" for="cronMinute23">23</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute24" value="24"/>
+                                                        	<label class="form-check-label" for="cronMinute24">24</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute25" value="25"/>
+                                                        	<label class="form-check-label" for="cronMinute25">25</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute26" value="26"/>
+                                                        	<label class="form-check-label" for="cronMinute26">26</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute27" value="27"/>
+                                                        	<label class="form-check-label" for="cronMinute27">27</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute28" value="28"/>
+                                                        	<label class="form-check-label" for="cronMinute28">28</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute29" value="29"/>
+                                                        	<label class="form-check-label" for="cronMinute29">29</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute30" value="30"/>
+                                                        	<label class="form-check-label" for="cronMinute30">30</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute31" value="31"/>
+                                                        	<label class="form-check-label" for="cronMinute31">31</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute32" value="32"/>
+                                                        	<label class="form-check-label" for="cronMinute32">32</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute33" value="33"/>
+                                                        	<label class="form-check-label" for="cronMinute33">33</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute34" value="34"/>
+                                                        	<label class="form-check-label" for="cronMinute34">34</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute35" value="35"/>
+                                                        	<label class="form-check-label" for="cronMinute35">35</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute36" value="36"/>
+                                                        	<label class="form-check-label" for="cronMinute36">36</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute37" value="37"/>
+                                                        	<label class="form-check-label" for="cronMinute37">37</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute38" value="38"/>
+                                                        	<label class="form-check-label" for="cronMinute38">38</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute39" value="39"/>
+                                                        	<label class="form-check-label" for="cronMinute39">39</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute40" value="40"/>
+                                                        	<label class="form-check-label" for="cronMinute40">40</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute41" value="41"/>
+                                                        	<label class="form-check-label" for="cronMinute41">41</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute42" value="42"/>
+                                                        	<label class="form-check-label" for="cronMinute42">42</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute43" value="43"/>
+                                                        	<label class="form-check-label" for="cronMinute43">43</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute44" value="44"/>
+                                                        	<label class="form-check-label" for="cronMinute44">44</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute45" value="45"/>
+                                                        	<label class="form-check-label" for="cronMinute45">45</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute46" value="46"/>
+                                                        	<label class="form-check-label" for="cronMinute46">46</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute47" value="47"/>
+                                                        	<label class="form-check-label" for="cronMinute47">47</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute48" value="48"/>
+                                                        	<label class="form-check-label" for="cronMinute48">48</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute49" value="49"/>
+                                                        	<label class="form-check-label" for="cronMinute49">49</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute50" value="50"/>
+                                                        	<label class="form-check-label" for="cronMinute50">50</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute51" value="51"/>
+                                                        	<label class="form-check-label" for="cronMinute51">51</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute52" value="52"/>
+                                                        	<label class="form-check-label" for="cronMinute52">52</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute53" value="53"/>
+                                                        	<label class="form-check-label" for="cronMinute53">53</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute54" value="54"/>
+                                                        	<label class="form-check-label" for="cronMinute54">54</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute55" value="55"/>
+                                                        	<label class="form-check-label" for="cronMinute55">55</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute56" value="56"/>
+                                                        	<label class="form-check-label" for="cronMinute56">56</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute57" value="57"/>
+                                                        	<label class="form-check-label" for="cronMinute57">57</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute58" value="58"/>
+                                                        	<label class="form-check-label" for="cronMinute58">58</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronMinuteSpecificSpecific" type="radio" id="cronMinute59" value="59"/>
+                                                        	<label class="form-check-label" for="cronMinute59">59</label>
+                                                    	</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="tabs-3" role="tabpanel">
+										<div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronEveryHour" name="cronHour" checked="true"/>
+												<label class="form-check-label" for="cronEveryHour">Every hour</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronHourIncrement" name="cronHour"/>
+												<label class="form-check-label" for="cronHourIncrement">
+													Every
+													<select id="cronHourIncrementIncrement" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>
+													</select> hour(s) starting at hour
+													<select id="cronHourIncrementStart" style="width:50px;">
+														<option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+													</select>
+												</label>
+											</div>
+											<div>
+                                                <input type="radio" id="cronHourSpecific"  name="cronHour"/>
+												<label for="cronHourSpecific">Specific hour (choose one or many)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour0" value="0" checked=""/>
+                                                        	<label class="form-check-label" for="cronHour0">00</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour1" value="1"/>
+                                                        	<label class="form-check-label" for="cronHour1">01</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour2" value="2"/>
+                                                        	<label class="form-check-label" for="cronHour2">02</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour3" value="3"/>
+                                                        	<label class="form-check-label" for="cronHour3">03</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour4" value="4"/>
+                                                        	<label class="form-check-label" for="cronHour4">04</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour5" value="5"/>
+                                                        	<label class="form-check-label" for="cronHour5">05</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour6" value="6"/>
+                                                        	<label class="form-check-label" for="cronHour6">06</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour7" value="7"/>
+                                                        	<label class="form-check-label" for="cronHour7">07</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour8" value="8"/>
+                                                        	<label class="form-check-label" for="cronHour8">08</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour9" value="9"/>
+                                                        	<label class="form-check-label" for="cronHour9">09</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour10" value="10"/>
+                                                        	<label class="form-check-label" for="cronHour10">10</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour11" value="11"/>
+                                                        	<label class="form-check-label" for="cronHour11">11</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour12" value="12"/>
+                                                        	<label class="form-check-label" for="cronHour12">12</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour13" value="13"/>
+                                                        	<label class="form-check-label" for="cronHour13">13</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour14" value="14"/>
+                                                        	<label class="form-check-label" for="cronHour14">14</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour15" value="15"/>
+                                                        	<label class="form-check-label" for="cronHour15">15</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour16" value="16"/>
+                                                        	<label class="form-check-label" for="cronHour16">16</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour17" value="17"/>
+                                                        	<label class="form-check-label" for="cronHour17">17</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour18" value="18"/>
+                                                        	<label class="form-check-label" for="cronHour18">18</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour19" value="19"/>
+                                                        	<label class="form-check-label" for="cronHour19">19</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour20" value="20"/>
+                                                        	<label class="form-check-label" for="cronHour20">20</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour21" value="21"/>
+                                                        	<label class="form-check-label" for="cronHour21">21</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour22" value="22"/>
+                                                        	<label class="form-check-label" for="cronHour22">22</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronHourSpecificSpecific" type="checkbox" id="cronHour23" value="23"/>
+                                                        	<label class="form-check-label" for="cronHour23">23</label>
+                                                    	</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronHourRange" name="cronHour"/>
+												<label class="form-check-label" for="cronHourRange">
+													Every hour between hour
+													<select id="cronHourRangeStart" style="width:50px;">
+														<option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+													</select>
+													and hour
+													<select id="cronHourRangeEnd" style="width:50px;">
+														<option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+													</select>
+												</label>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="tabs-4" role="tabpanel">
+										<div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronEveryDay" name="cronDay" checked="true"/>
+												<label class="form-check-label" for="cronEveryDay">Every day</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronDowIncrement" name="cronDay"/>
+												<label class="form-check-label" for="cronDowIncrement">
+													Every
+													<select id="cronDowIncrementIncrement" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option>
+													</select> day(s) starting on
+													<select id="cronDowIncrementStart" style="width:125px;">
+														<option value="1">Sunday</option>
+														<option value="2">Monday</option>
+														<option value="3">Tuesday</option>
+														<option value="4">Wednesday</option>
+														<option value="5">Thursday</option>
+														<option value="6">Friday</option>
+														<option value="7">Saturday</option>
+													</select>
+												</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronDomIncrement" name="cronDay"/>
+												<label class="form-check-label" for="cronDomIncrement">
+													Every
+													<select id="cronDomIncrementIncrement" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+													</select> day(s) starting on the
+													<select id="cronDomIncrementStart" style="width:50px;">
+														<option value="1">1st</option>
+														<option value="2">2nd</option>
+														<option value="3">3rd</option>
+														<option value="4">4th</option>
+														<option value="5">5th</option>
+														<option value="6">6th</option>
+														<option value="7">7th</option>
+														<option value="8">8th</option>
+														<option value="9">9th</option>
+														<option value="10">10th</option>
+														<option value="11">11th</option>
+														<option value="12">12th</option>
+														<option value="13">13th</option>
+														<option value="14">14th</option>
+														<option value="15">15th</option>
+														<option value="16">16th</option>
+														<option value="17">17th</option>
+														<option value="18">18th</option>
+														<option value="19">19th</option>
+														<option value="20">20th</option>
+														<option value="21">21st</option>
+														<option value="22">22nd</option>
+														<option value="23">23rd</option>
+														<option value="24">24th</option>
+														<option value="25">25th</option>
+														<option value="26">26th</option>
+														<option value="27">27th</option>
+														<option value="28">28th</option>
+														<option value="29">29th</option>
+														<option value="30">30th</option>
+														<option value="31">31st</option>
+													</select>
+													of the month
+												</label>
+											</div>
+											<div class="mb-3">
+                                                <input type="radio" id="cronDowSpecific" name="cronDay"/>
+												<label for="cronDowSpecific">Specific day of the week (choose one or many)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowSun" value="SUN" checked=""/>
+                                                        	<label class="form-check-label" for="cronDowSun">Sunday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowMon" value="MON"/>
+                                                        	<label class="form-check-label" for="cronDowMon">Monday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowTue" value="TUE"/>
+                                                        	<label class="form-check-label" for="cronDowTue">Tuesday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowWed" value="WED"/>
+                                                        	<label class="form-check-label" for="cronDowWed">Wednesday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowThu" value="THU"/>
+                                                        	<label class="form-check-label" for="cronDowThu">Thursday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowFri" value="FRI"/>
+                                                        	<label class="form-check-label" for="cronDowFri">Friday</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronDowSpecificSpecific" type="checkbox" id="cronDowSat" value="SAT"/>
+                                                        	<label class="form-check-label" for="cronDowSat">Saturday</label>
+                                                    	</span>
+													</div>
+												</div>
+											</div>
+											<div class="mb-3">
+                                                <input type="radio" id="cronDomSpecific" name="cronDay"/>
+												<label for="cronDomSpecific">Specific day of month (choose one or many)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom1" value="1" checked=""/>
+                                                        	<label class="form-check-label" for="cronDom1">01</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom2" value="2"/>
+                                                        	<label class="form-check-label" for="cronDom2">02</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom3" value="3"/>
+                                                        	<label class="form-check-label" for="cronDom3">03</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom4" value="4"/>
+                                                        	<label class="form-check-label" for="cronDom4">04</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom5" value="5"/>
+                                                        	<label class="form-check-label" for="cronDom5">05</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom6" value="6"/>
+                                                        	<label class="form-check-label" for="cronDom6">06</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom7" value="7"/>
+                                                        	<label class="form-check-label" for="cronDom7">07</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom8" value="8"/>
+                                                        	<label class="form-check-label" for="cronDom8">08</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom9" value="9"/>
+                                                        	<label class="form-check-label" for="cronDom9">09</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom10" value="10"/>
+                                                        	<label class="form-check-label" for="cronDom10">10</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom11" value="11"/>
+                                                        	<label class="form-check-label" for="cronDom11">11</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom12" value="12"/>
+                                                        	<label class="form-check-label" for="cronDom12">12</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom13" value="13"/>
+                                                        	<label class="form-check-label" for="cronDom13">13</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom14" value="14"/>
+                                                        	<label class="form-check-label" for="cronDom14">14</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom15" value="15"/>
+                                                        	<label class="form-check-label" for="cronDom15">15</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom16" value="16"/>
+                                                        	<label class="form-check-label" for="cronDom16">16</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom17" value="17"/>
+                                                        	<label class="form-check-label" for="cronDom17">17</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom18" value="18"/>
+                                                        	<label class="form-check-label" for="cronDom18">18</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom19" value="19"/>
+                                                        	<label class="form-check-label" for="cronDom19">19</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom20" value="20"/>
+                                                        	<label class="form-check-label" for="cronDom20">20</label>
+                                                    	</span>
+													</div>
+													<div class="row row-cols-lg-auto g-3 align-items-center">
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom21" value="21"/>
+                                                        	<label class="form-check-label" for="cronDom21">21</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom22" value="22"/>
+                                                        	<label class="form-check-label" for="cronDom22">22</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom23" value="23"/>
+                                                        	<label class="form-check-label" for="cronDom23">23</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom24" value="24"/>
+                                                        	<label class="form-check-label" for="cronDom24">24</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom25" value="25"/>
+                                                        	<label class="form-check-label" for="cronDom25">25</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom26" value="26"/>
+                                                        	<label class="form-check-label" for="cronDom26">26</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom27" value="27"/>
+                                                        	<label class="form-check-label" for="cronDom27">27</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom28" value="28"/>
+                                                        	<label class="form-check-label" for="cronDom28">28</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom29" value="29"/>
+                                                        	<label class="form-check-label" for="cronDom29">29</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom30" value="30"/>
+                                                        	<label class="form-check-label" for="cronDom30">30</label>
+                                                    	</span>
+														<span class="col-6p">
+                                                            <input class="form-check-input" name="cronDomSpecificSpecific" type="checkbox" id="cronDom31" value="31"/>
+                                                        	<label class="form-check-label" for="cronDom31">31</label>
+                                                    	</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronLastDayOfMonth" name="cronDay"/>
+												<label class="form-check-label" for="cronLastDayOfMonth">On the last day of the month</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronLastWeekdayOfMonth" name="cronDay"/>
+												<label class="form-check-label" for="cronLastWeekdayOfMonth">On the last weekday of the month</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronLastSpecificDom" name="cronDay"/>
+												<label class="form-check-label" for="cronLastSpecificDom">
+													On the last
+													<select id="cronLastSpecificDomDay" style="width:125px;">
+														<option value="1">Sunday</option>
+														<option value="2">Monday</option>
+														<option value="3">Tuesday</option>
+														<option value="4">Wednesday</option>
+														<option value="5">Thursday</option>
+														<option value="6">Friday</option>
+														<option value="7">Saturday</option>
+													</select>
+													of the month
+												</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronDaysBeforeEom" name="cronDay"/>
+												<label class="form-check-label" for="cronDaysBeforeEom">
+													On the last
+													<select id="cronDaysBeforeEomMinus" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+													</select>
+													day(s) before the end of the month
+												</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronDaysNearestWeekdayEom" name="cronDay"/>
+												<label class="form-check-label" for="cronDaysNearestWeekdayEom">
+													Nearest weekday (Monday to Friday) to the
+													<select id="cronDaysNearestWeekday" style="width:50px;">
+														<option value="1">1st</option>
+														<option value="2">2nd</option>
+														<option value="3">3rd</option>
+														<option value="4">4th</option>
+														<option value="5">5th</option>
+														<option value="6">6th</option>
+														<option value="7">7th</option>
+														<option value="8">8th</option>
+														<option value="9">9th</option>
+														<option value="10">10th</option>
+														<option value="11">11th</option>
+														<option value="12">12th</option>
+														<option value="13">13th</option>
+														<option value="14">14th</option>
+														<option value="15">15th</option>
+														<option value="16">16th</option>
+														<option value="17">17th</option>
+														<option value="18">18th</option>
+														<option value="19">19th</option>
+														<option value="20">20th</option>
+														<option value="21">21st</option>
+														<option value="22">22nd</option>
+														<option value="23">23rd</option>
+														<option value="24">24th</option>
+														<option value="25">25th</option>
+														<option value="26">26th</option>
+														<option value="27">27th</option>
+														<option value="28">28th</option>
+														<option value="29">29th</option>
+														<option value="30">30th</option>
+														<option value="31">31st</option>
+													</select>
+													of the month
+												</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronNthDay" name="cronDay"/>
+												<label class="form-check-label" for="cronNthDay">
+													On the
+													<select id="cronNthDayNth" style="width:50px;">
+														<option value="1">1st</option>
+														<option value="2">2nd</option>
+														<option value="3">3rd</option>
+														<option value="4">4th</option>
+														<option value="5">5th</option>
+													</select>
+													<select id="cronNthDayDay" style="width:125px;">
+														<option value="1">Sunday</option>
+														<option value="2">Monday</option>
+														<option value="3">Tuesday</option>
+														<option value="4">Wednesday</option>
+														<option value="5">Thursday</option>
+														<option value="6">Friday</option>
+														<option value="7">Saturday</option>
+													</select>
+													of the month
+												</label>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="tabs-5" role="tabpanel">
+										<div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronEveryMonth" name="cronMonth" checked="true"/>
+												<label class="form-check-label" for="cronEveryMonth">Every month</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronMonthIncrement" name="cronMonth"/>
+												<label class="form-check-label" for="cronMonthIncrement">
+													Every
+													<select id="cronMonthIncrementIncrement" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+													</select> month(s) starting in
+													<select id="cronMonthIncrementStart" style="width:125px;">
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+												</label>
+											</div>
+											<div>
+                                                <input type="radio" id="cronMonthSpecific" name="cronMonth"/>
+												<label for="cronMonthSpecific">Specific month (choose one or many)</label>
+												<div style="margin-left:20px;">
+													<div class="row row-cols-lg-auto g-3 align-items-center mb-3">
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth1" value="JAN" selected=""/>
+                                                        	<label class="form-check-label" for="cronMonth1">JAN</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth2" value="FEB"/>
+                                                        	<label class="form-check-label" for="cronMonth2">FEB</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth3" value="MAR"/>
+                                                        	<label class="form-check-label" for="cronMonth3">MAR</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth4" value="APR"/>
+                                                        	<label class="form-check-label" for="cronMonth4">APR</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth5" value="MAY"/>
+                                                        	<label class="form-check-label" for="cronMonth5">MAY</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth6" value="JUN"/>
+                                                        	<label class="form-check-label" for="cronMonth6">JUN</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth7" value="JUL"/>
+                                                        	<label class="form-check-label" for="cronMonth7">JUL</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth8" value="AUG"/>
+                                                        	<label class="form-check-label" for="cronMonth8">AUG</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth9" value="SEP"/>
+                                                        	<label class="form-check-label" for="cronMonth9">SEP</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth10" value="OCT"/>
+                                                        	<label class="form-check-label" for="cronMonth10">OCT</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth11" value="NOV"/>
+                                                        	<label class="form-check-label" for="cronMonth11">NOV</label>
+                                                    	</span>
+														<span class="col-sm-1">
+                                                            <input class="form-check-input" name="cronMonthSpecificSpecific" type="checkbox" id="cronMonth12" value="DEC"/>
+                                                        	<label class="form-check-label" for="cronMonth12">DEC</label>
+                                                    	</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronMonthRange" name="cronMonth"/>
+												<label class="form-check-label" for="cronMonthRange">
+													Every month between
+													<select id="cronMonthRangeStart" style="width:125px;">
+														<option value="1" selected="">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+													and
+													<select id="cronMonthRangeEnd" style="width:125px;">
+														<option value="1">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12" selected="">December</option>
+													</select>
+												</label>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="tabs-6" role="tabpanel">
+										<div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronEveryYear" name="cronYear" checked="true"/>
+												<label class="form-check-label" for="cronEveryYear">Any year</label>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronYearIncrement" name="cronYear"/>
+												<label class="form-check-label" for="cronYearIncrement">
+													Every
+													<select id="cronYearIncrementIncrement" style="width:50px;">
+														<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option>
+													</select> years(s) starting in
+													<select id="cronYearIncrementStart" style="width:80px;">
+														<option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option>
+													</select>
+												</label>
+											</div>
+											<div>
+                                                <input type="radio" id="cronYearSpecific" name="cronYear"/>
+												<label for="cronYearSpecific">Specific year (choose one or many)</label>
+												<div style="margin-left:20px;">
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2020" value="2020"/>
+															<label class="form-check-label" for="cronYear2020">2020</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2021" value="2021"/>
+															<label class="form-check-label" for="cronYear2021">2021</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2022" value="2022"/>
+															<label class="form-check-label" for="cronYear2022">2022</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2023" value="2023"/>
+															<label class="form-check-label" for="cronYear2023">2023</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2024" value="2024"/>
+															<label class="form-check-label" for="cronYear2024">2024</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2025" value="2025"/>
+															<label class="form-check-label" for="cronYear2025">2025</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2026" value="2026"/>
+															<label class="form-check-label" for="cronYear2026">2026</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2027" value="2027"/>
+															<label class="form-check-label" for="cronYear2027">2027</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2028" value="2028"/>
+															<label class="form-check-label" for="cronYear2028">2028</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2029" value="2029"/>
+															<label class="form-check-label" for="cronYear2029">2029</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2030" value="2030"/>
+															<label class="form-check-label" for="cronYear2030">2030</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2031" value="2031"/>
+															<label class="form-check-label" for="cronYear2031">2031</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2032" value="2032"/>
+															<label class="form-check-label" for="cronYear2032">2032</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2033" value="2033"/>
+															<label class="form-check-label" for="cronYear2033">2033</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2034" value="2034"/>
+															<label class="form-check-label" for="cronYear2034">2034</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2035" value="2035"/>
+															<label class="form-check-label" for="cronYear2035">2035</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2036" value="2036"/>
+															<label class="form-check-label" for="cronYear2036">2036</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2037" value="2037"/>
+															<label class="form-check-label" for="cronYear2037">2037</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2038" value="2038"/>
+															<label class="form-check-label" for="cronYear2038">2038</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2039" value="2039"/>
+															<label class="form-check-label" for="cronYear2039">2039</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2040" value="2040"/>
+															<label class="form-check-label" for="cronYear2040">2040</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2041" value="2041"/>
+															<label class="form-check-label" for="cronYear2041">2041</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2042" value="2042"/>
+															<label class="form-check-label" for="cronYear2042">2042</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2043" value="2043"/>
+															<label class="form-check-label" for="cronYear2043">2043</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2044" value="2044"/>
+															<label class="form-check-label" for="cronYear2044">2044</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2045" value="2045"/>
+															<label class="form-check-label" for="cronYear2045">2045</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2046" value="2046"/>
+															<label class="form-check-label" for="cronYear2046">2046</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2047" value="2047"/>
+															<label class="form-check-label" for="cronYear2047">2047</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2048" value="2048"/>
+															<label class="form-check-label" for="cronYear2048">2048</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2049" value="2049"/>
+															<label class="form-check-label" for="cronYear2049">2049</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2050" value="2050"/>
+															<label class="form-check-label" for="cronYear2050">2050</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2051" value="2051"/>
+															<label class="form-check-label" for="cronYear2051">2051</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2052" value="2052"/>
+															<label class="form-check-label" for="cronYear2052">2052</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2053" value="2053"/>
+															<label class="form-check-label" for="cronYear2053">2053</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2054" value="2054"/>
+															<label class="form-check-label" for="cronYear2054">2054</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2055" value="2055"/>
+															<label class="form-check-label" for="cronYear2055">2055</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2056" value="2056"/>
+															<label class="form-check-label" for="cronYear2056">2056</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2057" value="2057"/>
+															<label class="form-check-label" for="cronYear2057">2057</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2058" value="2058"/>
+															<label class="form-check-label" for="cronYear2058">2058</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2059" value="2059"/>
+															<label class="form-check-label" for="cronYear2059">2059</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2060" value="2060"/>
+															<label class="form-check-label" for="cronYear2060">2060</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2061" value="2061"/>
+															<label class="form-check-label" for="cronYear2061">2061</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2062" value="2062"/>
+															<label class="form-check-label" for="cronYear2062">2062</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2063" value="2063"/>
+															<label class="form-check-label" for="cronYear2063">2063</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2064" value="2064"/>
+															<label class="form-check-label" for="cronYear2064">2064</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2065" value="2065"/>
+															<label class="form-check-label" for="cronYear2065">2065</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2066" value="2066"/>
+															<label class="form-check-label" for="cronYear2066">2066</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2067" value="2067"/>
+															<label class="form-check-label" for="cronYear2067">2067</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2068" value="2068"/>
+															<label class="form-check-label" for="cronYear2068">2068</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2069" value="2069"/>
+															<label class="form-check-label" for="cronYear2069">2069</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2070" value="2070"/>
+															<label class="form-check-label" for="cronYear2070">2070</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2071" value="2071"/>
+															<label class="form-check-label" for="cronYear2071">2071</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2072" value="2072"/>
+															<label class="form-check-label" for="cronYear2072">2072</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2073" value="2073"/>
+															<label class="form-check-label" for="cronYear2073">2073</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2074" value="2074"/>
+															<label class="form-check-label" for="cronYear2074">2074</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2075" value="2075"/>
+															<label class="form-check-label" for="cronYear2075">2075</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2076" value="2076"/>
+															<label class="form-check-label" for="cronYear2076">2076</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2077" value="2077"/>
+															<label class="form-check-label" for="cronYear2077">2077</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2078" value="2078"/>
+															<label class="form-check-label" for="cronYear2078">2078</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2079" value="2079"/>
+															<label class="form-check-label" for="cronYear2079">2079</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2080" value="2080"/>
+															<label class="form-check-label" for="cronYear2080">2080</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2081" value="2081"/>
+															<label class="form-check-label" for="cronYear2081">2081</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2082" value="2082"/>
+															<label class="form-check-label" for="cronYear2082">2082</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2083" value="2083"/>
+															<label class="form-check-label" for="cronYear2083">2083</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2084" value="2084"/>
+															<label class="form-check-label" for="cronYear2084">2084</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2085" value="2085"/>
+															<label class="form-check-label" for="cronYear2085">2085</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2086" value="2086"/>
+															<label class="form-check-label" for="cronYear2086">2086</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2087" value="2087"/>
+															<label class="form-check-label" for="cronYear2087">2087</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2088" value="2088"/>
+															<label class="form-check-label" for="cronYear2088">2088</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2089" value="2089"/>
+															<label class="form-check-label" for="cronYear2089">2089</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2090" value="2090"/>
+															<label class="form-check-label" for="cronYear2090">2090</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2091" value="2091"/>
+															<label class="form-check-label" for="cronYear2091">2091</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2092" value="2092"/>
+															<label class="form-check-label" for="cronYear2092">2092</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2093" value="2093"/>
+															<label class="form-check-label" for="cronYear2093">2093</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2094" value="2094"/>
+															<label class="form-check-label" for="cronYear2094">2094</label>
+														</span>
+														
+															</div>
+														
+													
+														
+															<div class="row">
+														d-none
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2095" value="2095"/>
+															<label class="form-check-label" for="cronYear2095">2095</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2096" value="2096"/>
+															<label class="form-check-label" for="cronYear2096">2096</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2097" value="2097"/>
+															<label class="form-check-label" for="cronYear2097">2097</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2098" value="2098"/>
+															<label class="form-check-label" for="cronYear2098">2098</label>
+														</span>
+														
+													
+														
+														<span class="col-2">
+															<input class="form-check-input" name="cronYearSpecificSpecific" type="checkbox" id="cronYear2099" value="2099"/>
+															<label class="form-check-label" for="cronYear2099">2099</label>
+														</span>
+														
+															</div>
+														
+													
+												</div>
+											</div>
+											<div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" id="cronYearRange" name="cronYear"/>
+												<label class="form-check-label" for="cronYearRange">
+													Every year between
+													<select id="cronYearRangeStart" style="width:80px;">
+														<option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option>
+													</select>
+													and
+													<select id="cronYearRangeEnd" style="width:80px;">
+														<option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option>
+													</select>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div style="">
+									<table class="table" style="text-align:center;">
+										<thead>
+											<tr>
+												<th>Seconds</th>
+												<th>Minutes</th>
+												<th>Hours</th>
+												<th>Day Of Month</th>
+												<th>Month</th>
+												<th>Day Of Week</th>
+												<th>Year</th>
+											</tr>
+										</thead>
+										<tbody style="font-weight: 400;font-size: large; overflow-wrap: anywhere;">
+											<tr>
+												<td><span id="cronResultSecond">0</span></td>
+												<td><span id="cronResultMinute">0</span></td>
+												<td><span id="cronResultHour">0</span></td>
+												<td><span id="cronResultDom">?</span></td>
+												<td><span id="cronResultMonth">*</span></td>
+												<td><span id="cronResultDow">*</span></td>
+												<td><span id="cronResultYear">*</span></td>
+											</tr>
+										</tbody>
+									</table>
+									<h3 class="mb-2" style="color:#1b6ca8;text-align: center;"># Cron Expression #</h3>
+									<h2 class="cronResult mb-2" style="text-align: center;background: aliceblue;padding: 10px;" id="cross-expression-result">0 0 0 ? * * *</h2>
+									<span class="mb-2" style="color:#1b6ca8;text-align: center;">
+                                    	
+                                        <span id="load-schedules-here"></span>
+                                        <div class="alert alert-success d-none" role="alert" id="success-display-area">
+                                            
+                                        </div>
+                                        <div class="alert alert-danger margin-top--md d-none" role="alert" id="error-display-area">
+                                            
+                                        </div>
+                                        <label for="classes">Choose a Schedulable Apex Class:</label>
+                                        
+                                        <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="classes" id="apex-classes">
+                                        </select>
+                                        <button type="button" class="btn btn-primary btn-lg margin-top--md margin-bottom--md" id="get-schedule">Get Schedules</button>
+                                    
+                                        
+                                    </span>
+								</div>
+							</div>
+							<!-- end card body -->
+						</div>
+						<!-- end card -->
+					</div>
+
+			</div> <!-- container-fluid -->
+		</div>
+		<!-- End Page-content -->
+
+
+
+	</div>
+	<!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+<script>
+	const _FF = {
+		cron: function () {
+			$(this).parents('.cron-option').children('input[type="radio"]').attr("checked", "checked");
+			_FF.seconds();
+			_FF.minutes();
+			_FF.hours();
+			_FF.day();
+			_FF.month();
+			_FF.year();
+			var seconds = $('#cronResultSecond').text();
+			var minutes = $('#cronResultMinute').text();
+			var hours = $('#cronResultHour').text();
+			var dom = $('#cronResultDom').text();
+			var month = $('#cronResultMonth').text();
+			var dow = $('#cronResultDow').text();
+			var year = $('#cronResultYear').text();
+			$('.cronResult').text(seconds + ' ' + minutes + ' ' + hours + ' ' + dom + ' ' + month + ' ' + dow + ' ' + year);
+		},
+		seconds: function () {
+			var seconds = '';
+			if ($('#cronEverySecond:checked').length) {
+				seconds = '*';
+			} else if ($('#cronSecondIncrement:checked').length) {
+				seconds = $('#cronSecondIncrementStart').val();
+				seconds += '/';
+				seconds += $('#cronSecondIncrementIncrement').val();
+			} else if ($('#cronSecondSpecific:checked').length) {
+				$('[name="cronSecondSpecificSpecific"]:checked').each(function (i, chck) {
+					seconds += $(chck).val();
+					seconds += ',';
+				});
+				if (seconds === '') {
+					seconds = '0';
+				} else {
+					seconds = seconds.slice(0, -1);
+				}
+			} else {
+				seconds = $('#cronSecondRangeStart').val();
+				seconds += '-';
+				seconds += $('#cronSecondRangeEnd').val();
+			}
+			$('#cronResultSecond').text(seconds);
+		},
+		minutes: function () {
+			var minutes = '';
+			if ($('#cronEveryMinute:checked').length) {
+				minutes = '*';
+			} else if ($('#cronMinuteIncrement:checked').length) {
+				minutes = $('#cronMinuteIncrementStart').val();
+				minutes += '/';
+				minutes += $('#cronMinuteIncrementIncrement').val();
+			} else if ($('#cronMinuteSpecific:checked').length) {
+				$('[name="cronMinuteSpecificSpecific"]:checked').each(function (i, chck) {
+					minutes += $(chck).val();
+					minutes += ',';
+				});
+				if (minutes === '') {
+					minutes = '0';
+				} else {
+					minutes = minutes.slice(0, -1);
+				}
+			} else {
+				minutes = $('#cronMinuteRangeStart').val();
+				minutes += '-';
+				minutes += $('#cronMinuteRangeEnd').val();
+			}
+			$('#cronResultMinute').text(minutes);
+		},
+		hours: function () {
+			var hours = '';
+			if ($('#cronEveryHour:checked').length) {
+				hours = '*';
+			} else if ($('#cronHourIncrement:checked').length) {
+				hours = $('#cronHourIncrementStart').val();
+				hours += '/';
+				hours += $('#cronHourIncrementIncrement').val();
+			} else if ($('#cronHourSpecific:checked').length) {
+				$('[name="cronHourSpecificSpecific"]:checked').each(function (i, chck) {
+					hours += $(chck).val();
+					hours += ',';
+				});
+				if (hours === '') {
+					hours = '0';
+				} else {
+					hours = hours.slice(0, -1);
+				}
+			} else {
+				hours = $('#cronHourRangeStart').val();
+				hours += '-';
+				hours += $('#cronHourRangeEnd').val();
+			}
+			$('#cronResultHour').text(hours);
+		},
+		day: function () {
+			var dow = '';
+			var dom = '';
+
+			if ($('#cronEveryDay:checked').length) {
+				dow = '*';
+				dom = '?';
+			} else if ($('#cronDowIncrement:checked').length) {
+				dow = $('#cronDowIncrementStart').val();
+				dow += '/';
+				dow += $('#cronDowIncrementIncrement').val();
+				dom = '?';
+			} else if ($('#cronDomIncrement:checked').length) {
+				dom = $('#cronDomIncrementStart').val();
+				dom += '/';
+				dom += $('#cronDomIncrementIncrement').val();
+				dow = '?';
+			} else if ($('#cronDowSpecific:checked').length) {
+				dom = '?';
+				$('[name="cronDowSpecificSpecific"]:checked').each(function (i, chck) {
+					dow += $(chck).val();
+					dow += ',';
+				});
+				if (dow === '') {
+					dow = 'SUN';
+				} else {
+					dow = dow.slice(0, -1);
+				}
+			} else if ($('#cronDomSpecific:checked').length) {
+				dow = '?';
+				$('[name="cronDomSpecificSpecific"]:checked').each(function (i, chck) {
+					dom += $(chck).val();
+					dom += ',';
+				});
+				if (dom === '') {
+					dom = '1';
+				} else {
+					dom = dom.slice(0, -1);
+				}
+			} else if ($('#cronLastDayOfMonth:checked').length) {
+				dow = '?';
+				dom = 'L';
+			} else if ($('#cronLastWeekdayOfMonth:checked').length) {
+				dow = '?';
+				dom = 'LW';
+			} else if ($('#cronLastSpecificDom:checked').length) {
+				dom = '?';
+				dow = $('#cronLastSpecificDomDay').val();
+				dow += 'L';
+			} else if ($('#cronDaysBeforeEom:checked').length) {
+				dow = '?';
+				dom = 'L-';
+				dom += $('#cronDaysBeforeEomMinus').val();
+			} else if ($('#cronDaysNearestWeekdayEom:checked').length) {
+				dow = '?';
+				dom = $('#cronDaysNearestWeekday').val();
+				dom += 'W';
+			} else if ($('#cronNthDay:checked').length) {
+				dom = '?';
+				dow = $('#cronNthDayDay').val();
+				dow += '#';
+				dow += $('#cronNthDayNth').val();;
+			}
+			$('#cronResultDom').text(dom);
+			$('#cronResultDow').text(dow);
+		},
+		month: function () {
+			var month = '';
+			if ($('#cronEveryMonth:checked').length) {
+				month = '*';
+			} else if ($('#cronMonthIncrement:checked').length) {
+				month = $('#cronMonthIncrementStart').val();
+				month += '/';
+				month += $('#cronMonthIncrementIncrement').val();
+			} else if ($('#cronMonthSpecific:checked').length) {
+				$('[name="cronMonthSpecificSpecific"]:checked').each(function (i, chck) {
+					month += $(chck).val();
+					month += ',';
+				});
+				if (month === '') {
+					month = '1';
+				} else {
+					month = month.slice(0, -1);
+				}
+			} else {
+				month = $('#cronMonthRangeStart').val();
+				month += '-';
+				month += $('#cronMonthRangeEnd').val();
+			}
+			$('#cronResultMonth').text(month);
+		},
+		year: function () {
+			var year = '';
+			if ($('#cronEveryYear:checked').length) {
+				year = '*';
+			} else if ($('#cronYearIncrement:checked').length) {
+				year = $('#cronYearIncrementStart').val();
+				year += '/';
+				year += $('#cronYearIncrementIncrement').val();
+			} else if ($('#cronYearSpecific:checked').length) {
+				$('[name="cronYearSpecificSpecific"]:checked').each(function (i, chck) {
+					year += $(chck).val();
+					year += ',';
+				});
+				if (year === '') {
+					year = '2016';
+				} else {
+					year = year.slice(0, -1);
+				}
+			} else {
+				year = $('#cronYearRangeStart').val();
+				year += '-';
+				year += $('#cronYearRangeEnd').val();
+			}
+			$('#cronResultYear').text(year);
+		}
+	};
+
+	$(function () {
+		$('#crontabs input, #crontabs select').change(_FF.cron);
+		_FF.cron();
+	});
+
+	$('ul.nav.nav-tabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+
+    
+        
+</script>
+        
+        <script>
+        	const cronjsMatcher = require('@datasert/cronjs-matcher');
+            const {parse} = require('@datasert/cronjs-parser');
+            
+            const parsedExpr = parse('0 0 0 5,27 1/6 ? 2023', {hasSeconds: true});
+            
+            const futureMatches = cronjsMatcher.getFutureMatches(parsedExpr);
+            console.log(futureMatches); 
+        
+        	$('#get-next-schedule').click(function (e) {
+            	e.preventDefault()
+                $('#load-schedules-here').append('this is cool')
+            });
+        </script>
+        
+        <script>
+        $(function () {
+            $( "#get-schedule" ).click(function() {
+              	var apexBody = "String sch = '" + $('#cross-expression-result').text() + "';\n String jobID = system.schedule('Job TimeStamp "+ Date.now() +"', sch, new "+ $('#apex-classes').find(":selected").val() +"());";
+                console.log('apexBody== ', apexBody);
+                $('#error-display-area').addClass("d-none").empty();
+                $('#success-display-area').addClass("d-none").empty();
+                conn.tooling.executeAnonymous(apexBody, function(err, res) {
+                    if (err) { 
+                        return console.error(err); 
+                        $('#error-display-area').append(err).removeClass("d-none");
+                    }
+                    if(!res.success){
+                        $('#error-display-area').append(res.exceptionMessage + '. Strace: ' + res.exceptionStackTrace).removeClass("d-none");
+                    }
+                    else{
+                        $('#success-display-area').append('Job is successfully Scheduled!').removeClass("d-none");
+                    }
+                  
+                });
+            });
+            
+            
+            var conn = new jsforce.Connection({ accessToken: '{!$API.Session_Id}' });
+            conn.query('Select id,name,Body from ApexClass', function(err, res) {
+              if (err) { return console.error(err); }
+                let records = res.records;
+				for (var i=0; i< records.length; i++) {
+                    var record = records[i];
+                    console.log(record);
+                    if(record.Body.toLowerCase().includes("implements schedulable")){
+                    	$('#apex-classes').append('<option value="'+ record.Name + '">' + record.Name + '</option>')
+                	}
+           		}
+            });
+            
+            
+            
+            
+            
+        })
+        </script>
+
+</body>
+</apex:page>
