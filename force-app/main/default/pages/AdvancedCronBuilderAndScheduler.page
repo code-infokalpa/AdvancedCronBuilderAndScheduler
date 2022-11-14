@@ -5,7 +5,6 @@
         <meta name="description" content="Easy to use Cron Expression Builder" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-        <!--<apex:includeScript value="{!URLFOR($Resource.advance_cron, '/bundle.js')}"/> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsforce/1.11.0/jsforce.min.js" integrity="sha512-8hVBUCZTjM+P4Fiz4CdowIAgPD0WLYjb4yxwBqasFLPevDmoIaNVbMOiqhV/eJEImnqY2jC/ehmdP1OhZOHaTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <title>Advanced Cron Builder and Scheduler</title>
@@ -1913,7 +1912,7 @@
                                         
                                         <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="classes" id="apex-classes">
                                         </select>
-                                        <button type="button" class="btn btn-primary btn-lg margin-top--md margin-bottom--md" id="get-schedule">Get Schedules</button>
+                                        <button type="button" class="btn btn-primary btn-lg margin-top--md margin-bottom--md" id="get-schedule">Schedule</button>
                                     
                                         
                                     </span>
@@ -2170,10 +2169,7 @@
             const futureMatches = cronjsMatcher.getFutureMatches(parsedExpr);
             console.log(futureMatches); 
         
-        	$('#get-next-schedule').click(function (e) {
-            	e.preventDefault()
-                $('#load-schedules-here').append('this is cool')
-            });
+        	
         </script>
         
         <script>
