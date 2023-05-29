@@ -132,7 +132,7 @@
                                                             <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond11" value="11"/>
 															<label class="form-check-label" for="cronSecond11">11</label>
 														</span>
-														<span class="col-6p">$
+														<span class="col-6p">
                                                             <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond12" value="12"/>
 															<label class="form-check-label" for="cronSecond12">12</label>
 														</span>
@@ -181,7 +181,7 @@
 														<span class="col-6p">
                                                             <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond23" value="23"/>
 															<label class="form-check-label" for="cronSecond23">23</label>
-														</span>Specific
+														</span>
 														<span class="col-6p">
                                                             <input class="form-check-input" name="cronSecondSpecificSpecific" type="radio" id="cronSecond24" value="24"/>
 															<label class="form-check-label" for="cronSecond24">24</label>
