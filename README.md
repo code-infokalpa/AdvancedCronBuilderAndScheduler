@@ -4,4 +4,7 @@ and click interface, additionally it will list all the schedulable classes to sc
 
 visualforce page name: AdvancedCronBuilderAndScheduler.page
 
+You can visit [Article on Advanced Cron Builder and Scheduler](https://infokalpa.com/how-to-use-advancedcronbuilderandscheduler-to-schedule-job-in-salesforce) for detailed documentation and feature guide.
+
+
 Concept based on h**ps://freeformatterDOTcom
